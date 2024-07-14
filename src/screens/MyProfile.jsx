@@ -22,7 +22,7 @@ const MyProfile = ({navigation}) => {
         navigation.navigate("List Address");
       };
 
-      const defaultImageRoute = "../../assets/user.png";
+      const defaultImageRoute = "../../assets/images/user.png";
 
       const signOut = async () => {
         try {

@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import ordenes from "../data/orders.json";
 
 import OrderItem from "../components/OrderItem";
 import { useGetOrdersByUserQuery } from "../services/shopServices";

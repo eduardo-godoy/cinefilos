@@ -1,12 +1,9 @@
-import { StyleSheet, View, SafeAreaView, StatusBar, Platform, Text } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
 import { useFonts } from "expo-font";
 import { colors } from "./src/global/colors";
-
 import Navigator from "./src/navigation/Navigator";
-
 import { Provider } from "react-redux";
 import store from "./src/store";
-
 import { initSQLiteDB } from "./src/persistence"; 
 
 (async ()=> {
@@ -24,7 +21,7 @@ import { initSQLiteDB } from "./src/persistence";
 export default function App() {
 
   const [fontsLoaded, fontError] = useFonts({
-    Josefin: require("./assets/JosefinSans-Regular.ttf"),
+    Roboto: require("./assets/Roboto-Black.ttf"),
   });
 
   if (!fontsLoaded && !fontError) {
@@ -46,5 +43,6 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,
     backgroundColor: colors.lightGray,
+    fontFamily: "Roboto",
   },
 });

@@ -4,16 +4,16 @@
     "title": "Cortadora De Césped a Gasolina",
     "sku": "DLM4000",
     "description": "Descubre la solución perfecta para mantener tu jardín impecable: nuestra cortadora de césped DLM4000. Equipada con un motor de 4 tiempos de 3,5 HP, esta robusta herramienta es ideal para áreas de tamaño mediano, ofreciendo un ancho de corte de 39 cm. Además, su versatilidad brilla al permitir el ajuste de la altura de corte de 30 a 65 mm, adaptándose a tus necesidades específicas. Su bolsa recolectora de 35 litros agrega comodidad al proceso, mientras que el manillar plegable facilita su almacenamiento cuando no está en uso. ¡Mantén tu césped en perfecto estado con nuestra cortadora DLM4000!",
-    "price": 170.000,
+    "price": 170000,
     "stock": 100,
     "category": "jardin",
-    "images": "../../assets/images/jardin/dlm4000.jpg"
+    "images": "https://daewooherramientas.com.ar/wp-content/uploads/2022/09/DML4000-2.jpg"
   },{
     "id": 2,
     "title": "Cortadora de Césped Eléctrica",
     "sku": "DAC1200",
     "description": "Si necesitas una herramienta para cuidar el césped de tu jardín, nuestra cortadora de césped DAC1200 es una excelente opción. Cuenta con un potente y robusto motor de 1200 Watts. Su diseño ergonómico y peso ligero la hace perfecto para parques o jardines con un ancho de corte de 32 cm, además podemos ajustar su altura de corte en tres posiciones 25, 40 y 55 mm, fácilmente sin necesidad de herramientas de acuerdo al tipo de corte que queramos hacer. Su bolsa recolectora de 30 Lt, hace muy cómodo el uso además de contar con un testigo que nos avisa si se ha llenado la bolsa. El manillar es plegable lo que facilita el guardado cuando no utilicemos nuestra cortadora de césped.",
-    "price": 140.000,
+    "price": 140000,
     "stock": 100,
     "category": "jardin",
     "images": "../../assets/images/jardin/dac1200.jpg"
@@ -22,7 +22,7 @@
     "title": "Cortadora de Césped Eléctrica",
     "sku": "DAC1600",
     "description": "Optimiza el mantenimiento de tu jardín con nuestra cortadora de césped DAC1600, una elección destacada. Equipada con un motor potente de 1600 Watts, esta herramienta garantiza un rendimiento excepcional. Su diseño ergonómico y su peso ligero la convierten en la opción ideal para jardines y parques, con un generoso ancho de corte de 40 cm.Además, disfruta de la versatilidad al ajustar la altura de corte en cinco posiciones (entre 25 y 65 mm) de manera sencilla, sin necesidad de herramientas, gracias a una conveniente palanca. La bolsa recolectora de 30 litros incorpora un indicador que te alertará cuando esté llena. El manillar plegable facilita el almacenamiento, brindándote una solución completa y eficiente para el cuidado de tu césped con la DAC1600. ¡Descubre la excelencia en cada corte!",
-    "price": 150.000,
+    "price": 150000,
     "stock": 100,
     "category": "jardin",
     "images": "../../assets/images/jardin/dac1600.jpg"
@@ -31,7 +31,7 @@
     "title": "Desmalezadora A Gasolina",
     "sku": "D520ECO",
     "description": "Hacé que tu jardín o terreno luzca impecable de forma rápida y eficiente con nuestra desmalezadora D520ECO, la solución ideal. Este potente equipo cuenta con un robusto motor de dos tiempos de 52cc de cilindrada, garantizando un gran desempeño. Su capacidad de corte es impresionante, con un diámetro de 350 mm utilizando el cabezal de tanza, y 255 mm con la cuchilla de 3 puntas, permitiéndote abordar incluso las áreas más desafiantes de tu jardín.Además, la comodidad está asegurada con el arnés de hombro doble incluido, que te permite trabajar con todas las herramientas necesarias sin esfuerzo. Nuestro sistema EASY&FAST permite desmontar el barral de la desmalezadora para un transporte y almacenamiento sin complicaciones. ¡Dale a tu jardín la belleza que se merece con la D520ECO!",
-    "price": 130.000,
+    "price": 130000,
     "stock": 100,
     "category": "jardin",
     "images": "../../assets/images/jardin/d520eco.jpg"
@@ -40,7 +40,7 @@
     "title": "Amoladora Angular",
     "sku": "DAAG115-75",
     "description": "La amoladora Daewoo DAAG115-75 de 115 mm (4 ½”) de diámetro, es la opción ideal para quien necesita una herramienta confiable y versátil. Su diseño ergonómico y equilibrio entre su peso y potencia es perfecto para realizar cualquier tarea gracias a su robusto y confiable motor de 750 w. Además, Daewoo ha agregado tecnologías para que tu trabajo sea más seguro y cómodo. Cuenta con ARRANQUE PROGRESIVO lo hace que, al arrancar, aumente sus revoluciones de forma suave minimizando el cansancio en largas jornadas de trabajo. También hemos agregado el SISTEMA ANTI ARRANQUE que hace que la amoladora no arranque nuevamente en caso de corte de energía mientras del gatillo se encuentra accionado.",
-    "price": 100.000,
+    "price": 100000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/daag115-75.jpg"
@@ -49,7 +49,7 @@
     "title": "Amoladora Angular",
     "sku": "DAAG115-90",
     "description": "La amoladora Daewoo DAAG115-90 de 115 mm (4 ½”) de diámetro, es una herramienta del segmento PROFESIONAL, lo que la hace la opción ideal para quien necesita una herramienta confiable y versátil. Su diseño ergonómico y equilibrio entre su peso y potencia es perfecto para realizar cualquier tarea gracias a su robusto y confiable motor de 900 w. Además, Daewoo ha agregado tecnologías para que tu trabajo sea más seguro y cómodo. Cuenta con ARRANQUE PROGRESIVO lo hace que, al arrancar, aumente sus revoluciones de forma suave minimizando el cansancio en largas jornadas de trabajo. También hemos agregado el SISTEMA ANTI-ARRANQUE que hace que la amoladora no arranque nuevamente en caso de corte de energía mientras del gatillo se encuentra accionado.",
-    "price": 110.000,
+    "price": 110000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/daag115-90.jpg"
@@ -58,7 +58,7 @@
     "title": "Super Pack: Amoladora + Taladro",
     "sku": "DAAG115-75 + DAID550",
     "description": "Nuestro SUPER PACK de amoladora y taladro es sin duda la mejor opción para cualquier trabajo que debamos encarar en nuestra casa. Con la amoladora DAAG115-75 de 750 w, podrás cortar y desbastar metales,  como soldaduras y hierros en general, lijar madera y pulir entre muchos de sus usos. Es el complemento perfecto para el taladro percutor de 13 mm DAID550 de 550 w con el vamos a poder perforar madera, metales y mampostería, también cuenta con velocidad variable y cambio de giro, lo que nos brindará una versatilidad inimaginable para trabajar en nuestros proyectos.",
-    "price": 150.000,
+    "price": 150000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/superkit.jpg"
@@ -67,7 +67,7 @@
     "title": "Kit Taladro Percutor",
     "sku": "DAID550K",
     "description": "El taladro percutor Daewoo DAID550K es una excelente opción para quien necesite una herramienta confiable para trabajar en los más diversos proyectos que queramos realizar en nuestro hogar. Su robusto motor de 550 w nos brinda una fantástica capacidad de trabajo en materiales como madera, hierro y también mampostería gracias a la incorporación de la función PERCUTOR. También cuenta con velocidad variable de 0 a 3000 RPM y cambio de sentido de giro que nos permite contar con una herramienta versátil y cómoda. Incluye maletín y accesorios para desarrollar tus proyectos.",
-    "price": 120.000,
+    "price": 120000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/daid550k.jpg"
@@ -76,7 +76,7 @@
     "title": "Taladro Percutor",
     "sku": "DAID750",
     "description": "Nuestro taladro percutor DAID750, es una excelente opción para quien necesite contar con una herramienta PROFESIONAL, su potente y robusto motor de 750 w cuenta con una velocidad variable de 0 a 2800 RPM y cambio de giro, hacen que contemos con un taladro extremadamente versátil, con el que podremos realizar los más diversos trabajos en madera y metales. Sumado a la función PERCUTOR para trabajos en mampostería. Gracias a su diseño ergonómico en el que cuidamos hasta los mas pequeños detalles, nuestro DAID750 es un taladro equilibrado, liviano y cómodo para el uso diario.",
-    "price": 130.000,
+    "price": 130000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/daid750.jpg"
@@ -85,7 +85,7 @@
     "title": "Taladro Inalámbrico",
     "sku": "DACD1210CK",
     "description": "Nuestro taladro atornillador inalámbrico DACD1210CK es una excelente opción, para quien busca una herramienta simple y práctica de usar ideal para el armado de muebles y carpintería. Cuenta con un mandril autoajustable de 10 mm. Su batería extraíble de litio es de 12 v y 1,5 Ah, alimenta un poderoso y robusto motor que nos brinda una excelente performance de trabajo, con velocidad variable de 0-550 RPM y contramarcha. Su fuerza de apriete o torque es de 19 Nm, ajustable en 19 posiciones. Cuenta con luz led de trabajo, cargador, set de puntas y herramientas en un practico bolso para que contar con todo lo que necesitas al comenzar tu  proyecto.",
-    "price": 80.000,
+    "price": 80000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/dacd1210ck.jpg"
@@ -94,7 +94,7 @@
     "title": "Taladro Inalámbrico, incluye una batería",
     "sku": "DACD1800V2",
     "description": "Nuestro taladro atornillador DACD1800V2, es una excelente opción, para quien busca una herramienta simple y práctica de usar ideal en las más diversas tareas. Provisto de un potente y confiable motor alimentado por una batería extraíble de litio de 18 v y 1,5 Ah. Incorpora la función PERCUTOR, ideal para perforar en mampostería. Velocidad variable y contramarcha, más dos velocidades mecánicas que nos brinda elasticidad en buscar el equilibrio entre fuerza de apriete (30 Nm) ajustable en 18 posiciones y velocidad (0-350 / 0-1350 RPM). Cuenta con luz de trabajo, maletín organizador, gancho metálico para cinturón, set de accesorios, y herramientas ideales para trabajos en el hogar más batería y cargador.",
-    "price": 90.000,
+    "price": 90000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/dacd1800v2.jpg"
@@ -103,7 +103,7 @@
     "title": "Sierra Caladora",
     "sku": "DAJS800",
     "description": "Nuestra sierra caladora DAJS800 se presenta como una elección excepcional para aquellos que buscan una herramienta de nivel profesional. Con un motor robusto de 800W y una velocidad de corte variable que va desde 500 hasta 3000 CPM, esta sierra está diseñada para maximizar la eficiencia en el trabajo y garantizar resultados sobresalientes.La DAJS800 cuenta con una base orientable que permite realizar cortes en bisel de hasta 45°, lo que aumenta significativamente su versatilidad. Además, hemos incorporado un sistema de corte pendular, perfecto para agilizar cortes rápidos, y un encastre rápido tipo JIN SAW que elimina la necesidad de utilizar herramientas adicionales.Esta sierra caladora viene acompañada de una guía paralela que facilita el proceso de corte, una base plástica que protege la superficie que estás trabajando y una guía de corte LASER para garantizar una precisión insuperable. La pipa para extracción de polvo permite la conexión a una aspiradora, manteniendo el entorno de trabajo limpio y libre de residuos.Indudablemente, la sierra caladora DAJS800 es la elección inmejorable para tus tareas cotidianas, proporcionando un rendimiento profesional de la más alta calidad.",
-    "price": 70.000,
+    "price": 70000,
     "stock": 100,
     "category": "herramientas",
     "images": "../../assets/images/herramientas/dajs800.jpg"
@@ -121,7 +121,7 @@
     "title": "Calentador De Patio",
     "sku": "DACZGB-A",
     "description": "Si estás en la búsqueda de un calefactor de patio para tener un ambiente más calido, indudablemente nuestro modelo DACZGB-A es la elección más destacada. Este equipo cumple con todas las normas de seguridad y se caracteriza por su facilidad de montaje gracias a un diseño meticuloso que atiende incluso los detalles más pequeños. Además, se encuentra equipado con ruedas que permiten su sencillo traslado.",
-    "price": 215.000,
+    "price": 215000,
     "stock": 100,
     "category": "calefaccion",
     "images": "../../assets/images/calefacion/daczgb-a.jpg"
@@ -130,7 +130,7 @@
     "title": "Calentador De Patio",
     "sku": "DACZGB-I",
     "description": "Si estás en busca de un calefactor de patio, no hay duda de que nuestro modelo DACZGB-I es la elección más sobresaliente. Este equipo cumple con todas las normas de seguridad y se caracteriza por su facilidad de montaje, gracias a un diseño meticuloso que atiende hasta los detalles más pequeños. Además, se encuentra equipado con ruedas que permiten su sencillo traslado.La puesta en marcha de este calefactor es sumamente sencilla y rápida, gracias a su encendido electrónico. Esto significa que podrás disfrutar del aire libre incluso en climas fríos sin complicaciones. Puedes confiar en que este calefactor nunca te decepcionará",
-    "price": 200.000,
+    "price": 200000,
     "stock": 100,
     "category": "calefaccion",
     "images": "../../assets/images/calefacion/daczgb-i.jpg"
@@ -139,7 +139,7 @@
     "title": "Estufa Garrafera (infrarroja)",
     "sku": "DANY-113",
     "description": "Si estás en búsqueda de un calefactor para tu hogar, nuestro modelo DANY-113 es, sin lugar a dudas, la elección más acertada. Este calefactor ha sido pensado y diseñado específicamente para su uso en espacios cerrados, y cumple con todas las normas de seguridad vigentes para garantizar la tranquilidad de tu hogar.Además de ser seguro, es una opción muy económica gracias a su bajo consumo de energía. Su diseño incluye ruedas que facilitan su transporte, y cuenta con un encendido electrónico confiable. La DANY-113 se presenta como la mejor alternativa para mantener tu hogar cálido durante los días más fríos.",
-    "price": 70.000,
+    "price": 70000,
     "stock": 100,
     "category": "calefaccion",
     "images": "../../assets/images/calefacion/dany113.jpg"
@@ -148,7 +148,7 @@
     "title": "Aspiradora polvo y agua 10 litros",
     "sku": "DAVC90-10L",
     "description": "Equipada con un motor potente de 1000W, esta aspiradora te permitirá limpiar tanto suciedad seca como húmeda. Para la limpieza de líquidos, es importante retirar la bolsa recolectora de papel y controlar el nivel dentro del depósito. Los accesorios incluidos te permitirán llevar a cabo todo tipo de trabajos de limpieza de manera rápida y con resultados inmaculados.Sin lugar a dudas, nuestra DAVC90-10L se destaca como la mejor opción para tus necesidades de aspiración, garantizando un rendimiento óptimo y versátil en la limpieza de diferentes tipos de suciedad",
-    "price": 50.000,
+    "price": 50000,
     "stock": 100,
     "category": "aspiradoras",
     "images": "../../assets/images/aspiradoras/davc90-10l.jpg"
@@ -157,7 +157,7 @@
     "title": "Aspiradora De Polvo Y Agua",
     "sku": "DAVC90-20L",
     "description": "Si estás en busca de una aspiradora potente y versátil, nuestra DAVC90-20L indiscutiblemente se presenta como la elección más acertada. En su diseño, se ha priorizado la optimización de la funcionalidad al incorporar ruedas que facilitan su transporte durante el proceso de aspirado.Esta aspiradora está equipada con un potente motor de 1000W, lo que te permite aspirar tanto suciedad seca como húmeda. Para la limpieza de líquidos, es importante retirar la bolsa recolectora de papel y controlar el nivel adecuado dentro del depósito. Los accesorios incluidos te permiten llevar a cabo cualquier tipo de trabajo de limpieza de manera rápida y con resultados inmaculados.",
-    "price": 60.000,
+    "price": 60000,
     "stock": 100,
     "category": "aspiradoras",
     "images": "../../assets/images/aspiradoras/davc90-20l.jpg"
@@ -166,7 +166,7 @@
     "title": "Aspiradora De Polvo Y Agua",
     "sku": "DAVC90-15L",
     "description": "Si estás en busca de una aspiradora potente y versátil, indiscutiblemente nuestra DAVC90-15L es la elección más acertada. En su diseño, se ha priorizado la optimización de la funcionalidad al incorporar ruedas que facilitan su transporte mientras aspiras y tacho plastico.Equipada con un motor potente de 1000W, esta aspiradora te permitirá limpiar tanto suciedad seca como húmeda. Para la limpieza de líquidos, es importante retirar la bolsa recolectora de papel y controlar el nivel dentro del depósito. Los accesorios incluidos te permitirán llevar a cabo todo tipo de trabajos de limpieza de manera rápida y con resultados inmaculados.",
-    "price": 70.000,
+    "price": 70000,
     "stock": 100,
     "category": "aspiradoras",
     "images": "../../assets/images/aspiradoras/davc90-15l.jpg"
@@ -175,7 +175,7 @@
     "title": "Hidrolavadora De Alta Presión",
     "sku": "DAX1130",
     "description": "Diseñada con un potente motor de 1200W y una bomba completamente metálica que proporciona una presión de 105 bares y un caudal de 390 litros por hora, esta hidrolavadora es una herramienta eficaz. Además, incorpora acoples rápidos para facilitar el ensamblaje de la manguera de alta presión.La DAX1130 también cuenta con un sistema de encendido AUTO-STOP, lo que significa que la hidrolavadora se encenderá o apagará de manera automática al accionar el gatillo de la lanza, lo que ahorra energía y mejora la vida útil de la máquina. Incluye características adicionales como un depósito para shampoo, una esponja de microfibra, una lanza de abanico ajustable y un filtro de entrada.",
-    "price": 55.000,
+    "price": 55000,
     "stock": 100,
     "category": "hidrolavadoras",
     "images": "../../assets/images/hidrolavadoras/dax1130.png"
@@ -184,7 +184,7 @@
     "title": "Hidrolavadora De Alta Presión",
     "sku": "DAX65-100",
     "description": "Con nuestra hidrolavadora DAX65-100, obtendrás resultados excepcionales en tus tareas de limpieza en superficies como pisos, paredes, automóviles y motos. Lograrás un trabajo impecable en menos tiempo, y lo más destacado es el significativo ahorro que esta herramienta te brindará.Esta hidrolavadora está diseñada con un potente motor de 1600W, una bomba completamente metálica que proporciona 100 bares de presión y un caudal de 426 litros por hora, lo que la convierte en una herramienta de alto rendimiento. Además, incorpora acoples rápidos para facilitar el montaje de la manguera de alta presión.La DAX65-100 cuenta con un sistema de encendido AUTO-STOP, lo que significa que la hidrolavadora se encenderá o apagará de forma automática al accionar el gatillo de la lanza, optimizando el consumo de energía y prolongando la vida útil de la máquina. También incluye un enrollador de manguera de 5 metros, ruedas para un transporte cómodo y práctico, así como un depósito para shampoo, esponja de microfibra, lanza de abanico ajustable y filtro de entrada.En resumen, nuestra DAX65-100 es, sin duda, una elección excelente para tus necesidades de limpieza de alta presión.",
-    "price": 70.000,
+    "price": 70000,
     "stock": 100,
     "category": "hidrolavadoras",
     "images": "../../assets/images/hidrolavadoras/dax65-100.png"
@@ -193,7 +193,7 @@
     "title": "Hidrolavadora De Alta Presión",
     "sku": "DAX21-150",
     "description": "Con nuestra hidrolavadora DAX21-150, lograrás los mejores resultados en tus labores de limpieza en pisos, paredes, automóviles y motos. Obtendrás un trabajo impecable en menos tiempo y, lo más destacado, disfrutarás de un significativo ahorro.Esta hidrolavadora está diseñada con un potente motor de 2000W, una bomba totalmente metálica que ofrece una presión de 140 bares y un caudal de 420 litros por hora. Además, incorpora acoples rápidos que facilitan el montaje de la manguera de alta presión.La DAX21-150 cuenta con un sistema de encendido AUTO-STOP, lo que significa que la hidrolavadora se encenderá o apagará de forma automática al accionar el gatillo de la lanza, optimizando el consumo de energía y prolongando la vida útil de la máquina. También incluye un enrollador de manguera de 5 metros, ruedas que hacen que su transporte sea cómodo y práctico, un mezclador automático de shampoo, esponja de microfibra, lanza de abanico ajustable y filtro de entrada.",
-    "price": 80.000,
+    "price": 80000,
     "stock": 100,
     "category": "hidrolavadoras",
     "images": "../../assets/images/hidrolavadoras/dax21-150.png"
@@ -202,7 +202,7 @@
     "title": "Soldadora Inverter 100",
     "sku": "MINIDW100MMA",
     "description": "La soldadora MINIDW100MMA es la elección ideal al buscar una soldadora. Su tecnología la convierte en un equipo liviano, cómodo de usar y fácil de transportar. Con un amperaje máximo de trabajo de 100 amperios, un ciclo de trabajo del 30 % y una eficiencia del 85 %, esta máquina es capaz de realizar trabajos de soldadura con gran rendimiento.Además, la soldadora incorpora tecnologías avanzadas como IGVT y ANTISTICK, lo que se traduce en una soldadura más rápida y de mayor calidad. Puedes utilizar electrodos de tipo 6013 o punta azul de hasta 2,5 mm, lo que la hace versátil para diferentes aplicaciones de soldadura.",
-    "price": 66.000,
+    "price": 66000,
     "stock": 100,
     "category": "soldadoras",
     "images": "../../assets/images/soldadoras/minidw100mma.jpg"
@@ -211,7 +211,7 @@
     "title": "Soldadora Inverter 160",
     "sku": "DW160MMA",
     "description": "Sin duda, la soldadora DW160MMA es la elección ideal al buscar una soldadora. Su tecnología la convierte en un equipo liviano, cómodo de usar y fácil de transportar. Con un amperaje máximo de trabajo de 160 amperios, un ciclo de trabajo del 30 % y una eficiencia del 85 %, esta máquina es capaz de realizar trabajos de soldadura con gran rendimiento.Además, la soldadora incorpora tecnologías avanzadas como IGVT y ANTISTICK, lo que se traduce en una soldadura más rápida y de mayor calidad. Puedes utilizar electrodos de tipo 6013 o punta azul de hasta 3,25 mm, lo que la hace versátil para diferentes aplicaciones de soldadura",
-    "price": 70.000,
+    "price": 70000,
     "stock": 100,
     "category": "soldadoras",
     "images": "../../assets/images/soldadoras/dw160mma.jpg"
@@ -220,7 +220,7 @@
     "title": "Soldadora Inverter 200",
     "sku": "DW200MMA",
     "description": "Sin duda, nuestra soldadora DW200MMA es la elección ideal al buscar una soldadora. Su tecnología la convierte en un equipo liviano, cómodo de usar y fácil de transportar. Con un amperaje máximo de trabajo de 200 amperios, un ciclo de trabajo del 30 % y una eficiencia del 85 %, esta máquina es capaz de realizar trabajos de soldadura con gran rendimiento.Además, la soldadora incorpora tecnologías avanzadas como IGVT y ANTISTICK, lo que se traduce en una soldadura más rápida y de mayor calidad. Puedes utilizar electrodos de tipo 6013 o punta azul de hasta 4 mm, lo que la hace versátil para diferentes aplicaciones de soldadura.",
-    "price": 85.000,
+    "price": 85000,
     "stock": 100,
     "category": "soldadoras",
     "images": "../../assets/images/soldadoras/dw200mma.jpg"
@@ -229,7 +229,7 @@
     "title": "Compresor De Aire",
     "sku": "DAC100D",
     "description": "El compresor de aire es, sin duda, una herramienta altamente versátil y útil para una variedad de aplicaciones en un taller o en el hogar. Te permite alimentar herramientas neumáticas que pueden hacer que muchas tareas sean más eficientes y efectivas. En resumen, elegir el compresor de aire adecuado implica considerar el tipo de trabajo que realizarás, la capacidad de aire requerida, la portabilidad y otros factores clave. Un compresor bien seleccionado te permitirá aprovechar al máximo tus herramientas neumáticas y realizar una amplia variedad de tareas de manera eficiente.",
-    "price": 105.000,
+    "price": 105000,
     "stock": 100,
     "category": "compresores",
     "images": "../../assets/images/compresores/dac100d.jpeg"
@@ -238,7 +238,7 @@
     "title": "Compresor De Aire",
     "sku": "DAC24D",
     "description": "El compresor de aire es, sin duda, una herramienta altamente versátil y útil para una variedad de aplicaciones en un taller o en el hogar. Te permite alimentar herramientas neumáticas que pueden hacer que muchas tareas sean más eficientes y efectivas. En resumen, elegir el compresor de aire adecuado implica considerar el tipo de trabajo que realizarás, la capacidad de aire requerida, la portabilidad y otros factores clave. Un compresor bien seleccionado te permitirá aprovechar al máximo tus herramientas neumáticas y realizar una amplia variedad de tareas de manera eficiente.",
-    "price": 125.000,
+    "price": 125000,
     "stock": 100,
     "category": "compresores",
     "images": "../../assets/images/compresores/dac24d.jpg"
@@ -247,7 +247,7 @@
     "title": "Compresor De Aire",
     "sku": "DAC50D",
     "description": "El compresor de aire se destaca como una herramienta verdaderamente indispensable, capaz de impulsar la eficiencia y la productividad en cualquier taller o en el hogar. Su versatilidad y utilidad proporciona la energía necesaria para alimentar herramientas neumáticas que revolucionan la forma en que se realizan diversas tareas.",
-    "price": 95.000,
+    "price": 95000,
     "stock": 100,
     "category": "compresores",
     "images": "../../assets/images/compresores/dac50d.jpg"
@@ -256,7 +256,7 @@
     "title": "Compresor De Aire",
     "sku": "DAC100VD",
     "description": "",
-    "price": 125.000,
+    "price": 125000,
     "stock": 100,
     "category": "compresores",
     "images": "../../assets/images/compresores/dac100vd.jpg"

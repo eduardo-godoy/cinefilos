@@ -1,7 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-
-import HomeStackNavigator from './HomeStackNavigator'
 import BottomTapNavigator from './BottomTapNavigator'
 import AuthStackNavigator from './AuthStackNavigator'
 import { useDispatch, useSelector } from 'react-redux'
@@ -35,10 +33,7 @@ const Navigator = () => {
 
   return (
     <NavigationContainer>
-      {/* <HomeStackNavigator /> */}
-      {/* <BottomTapNavigator /> */}
       {user ? <BottomTapNavigator /> : <AuthStackNavigator />}
-
     </NavigationContainer>
   )
 }

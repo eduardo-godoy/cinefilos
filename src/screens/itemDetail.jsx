@@ -67,7 +67,7 @@ const handleAddCart = () => {
             }
           >
             <Text>{product.title}</Text>
-            <Text>{product.description}</Text>
+            <Text>{product.sku}</Text>
             <Text style={styles.price}>${product.price}</Text>
             <Button title="Add cart" onPress={handleAddCart}></Button>
           </View>
