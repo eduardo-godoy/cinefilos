@@ -3,6 +3,7 @@ import React from "react";
 import Card from "./Card";
 import { colors } from "../global/colors";
 
+
 import { useDispatch } from "react-redux";
 import { setItemSelected } from "../features/Shop/ShopSlice";
 
@@ -28,7 +29,7 @@ const ProductItem = ({
         <Image
           resizeMode="cover"
           style={styles.image}
-          source={{ uri: product.images[0] }}
+          source={{ uri: product.image }}
         />
       </Pressable>
     </Card>

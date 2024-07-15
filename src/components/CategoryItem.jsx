@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCategorySelected } from '../features/Shop/ShopSlice';
 
 
-const CategoryItem = ({ category, navigation}) => {
+const CategoryItem = ({ category, navigation, }) => {
   const dispatch = useDispatch()
 
   const handleNavigate = () => {

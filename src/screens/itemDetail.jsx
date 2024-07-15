@@ -53,7 +53,7 @@ const handleAddCart = () => {
           }
         >
           <Image
-            source={{ uri: product.images[0] }}
+            source={{ uri: product.image }}
             style={
               orientation === "portrait" ? styles.image : styles.imageLandscape
             }

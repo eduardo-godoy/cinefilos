@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
+import CategoryItem from './CategoryItem'
 
-const Header = ({title}) => {
+
+const Header = ({ title, }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>

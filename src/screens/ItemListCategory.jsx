@@ -16,7 +16,7 @@ const ItemListCategory = ({ navigation, route }) => {
   const { category: categorySelected } = route.params;
 
   const {data: productsFetched, error: errorFetched, isLoading} = useGetProductsByCategoryQuery(categorySelected);
-  console.log(productsFetched)
+  console.log(categorySelected)
   useEffect(() => {
     const regexDigits = /\d/;
     const hasDigits = regexDigits.test(keyWord);

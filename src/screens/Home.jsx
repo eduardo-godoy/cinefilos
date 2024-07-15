@@ -6,7 +6,7 @@ import { useGetCategoriesQuery } from "../services/shopServices";
 
 //import Counter from "../components/Counter";
 
-const Home = ({ navigation, route }) => {
+const Home = ({ navigation }) => {
   const {data: categories} = useGetCategoriesQuery()
   //console.log(data)
   return (
