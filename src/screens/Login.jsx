@@ -5,15 +5,19 @@ import { useSignInMutation } from "../services/authService"
 import { useDispatch } from "react-redux"
 import { setUser } from "../features/User/UserSlice"
 import { insertSession } from "../persistence"
+import { loginValidations } from "../validations/loginValidations"
 
 import InputForm from "../components/InputForm"
 import SubmitButton from "../components/SubmitButton"
 
 export default Login = ({ navigation }) => {
   const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [errorMail, setErrorMail] = useState("")
+  const [password, setPassword] = useState("")
+  const [errorPassword, setErrorPassword] = useState("")
   const dispatch = useDispatch()
-  const [triggerSignIn, result] = useSignInMutation() 
+
+  const [triggerLogin, result] = useSignInMutation() 
 
   useEffect(()=> {
     if (result?.data && result.isSuccess) {
@@ -36,8 +40,20 @@ export default Login = ({ navigation }) => {
     }
   }, [result])
 
-  const onSubmit = ()=> {
-    triggerSignIn({email, password, returnSecureToken: true})
+  const onSubmit = () => {
+    try {
+      setErrorMail("")
+      setErrorPassword("")
+      loginValidations.validateSync({ email, password })
+      triggerLogin({ email, password, returnSecureToken: true })
+    } catch (err) {
+      switch (err.path) {
+        case "email":
+          setErrorMail(err.message)
+        case "password":
+          setErrorPassword(err.message)
+      }
+    }
   }
 
   return (
@@ -45,8 +61,8 @@ export default Login = ({ navigation }) => {
       <View style={styles.container}>
         <Text style={styles.title}>Bienvenido</Text>
         <Text style={styles.title2}>Iniciar sesión</Text>
-        <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={""} />
-        <InputForm placeholder="Ingrese su contraseña" onChange={setPassword} error={""}isSecure={true}/>
+        <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={true} />
+        <InputForm placeholder="Ingrese su contraseña" onChange={setPassword} error={errorPassword} isSecure={true}/>
         <SubmitButton onPress={onSubmit} title="Ingresar"/>
         <Text style={styles.sub}>¿No tienes una cuenta?</Text>
         <Pressable style={styles.subLink2} onPress={() => navigation.navigate("Signup")}>

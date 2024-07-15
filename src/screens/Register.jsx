@@ -34,19 +34,21 @@ const Register = ({ navigation }) => {
 
   const onSubmit = () => {
     try {
-      setErrorMail("")
-      setErrorPassword("")
-      setErrorConfirmPassword("")
       registerValidations.validateSync({ email, password, confirmPassword })
       triggerSignUp({ email, password, returnSecureToken: true })
     } catch (err) {
       switch (err.path) {
         case "email":
           setErrorMail(err.message)
+          break;
         case "password":
           setErrorPassword(err.message)
+          break;
         case "confirmPassword":
           setErrorConfirmPassword(err.message)
+          break;
+        default:
+          break;   
       }
     }
   }
@@ -59,6 +61,7 @@ const Register = ({ navigation }) => {
           placeholder="Ingrese su Email"
           onChange={setEmail}
           error={errorMail}
+          isSecure={true}
         />
         <InputForm
           placeholder="Ingrese su contraseña"
