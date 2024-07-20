@@ -11,7 +11,7 @@ export default SubmitButton = ({ onPress, title }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.orange,
+    backgroundColor: colors.red,
     borderRadius: 6,
     justifyContent: "center",
     alignItems: "center",

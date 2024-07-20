@@ -59,7 +59,7 @@ export default Login = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <View style={styles.container}>
-        <Text style={styles.title}>Bienvenido</Text>
+        <Text style={styles.title}>CINÉFILOS</Text>
         <Text style={styles.title2}>Iniciar sesión</Text>
         <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={true} />
         <InputForm placeholder="Ingrese su contraseña" onChange={setPassword} error={errorPassword} isSecure={true}/>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.orange
+    backgroundColor: colors.black
   },
   container: {
     width: "90%",
@@ -93,22 +93,22 @@ const styles = StyleSheet.create({
     padding: 30
   },
   title: {
-    color: colors.gray,
+    color: colors.red,
     fontSize: 60,
     fontWeight: "bold"
   },
   title2: {
-    color: colors.gray,
+    color: colors.red,
     fontSize: 40,
     fontWeight: "bold"
   },
   sub: {
     fontSize: 20,
-    color: colors.gray,
+    color: colors.black,
     fontWeight: "bold"
   },
   subLink2: {
-    backgroundColor: colors.orange,
+    backgroundColor: colors.red,
     borderRadius: 6,
     padding: 8,
     justifyContent: "center",

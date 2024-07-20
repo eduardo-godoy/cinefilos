@@ -40,8 +40,10 @@ const styles = StyleSheet.create({
   input: {
     width: "90%",
     borderWidth: 0,
-    borderBottomWidth: 3,
-    borderBottomColor: colors.gray,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.black,
+    backgroundColor: colors.gray100,
+    borderRadius: 5,
     padding: 2,
     fontSize: 18,
   },
