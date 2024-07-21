@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import BottomTapNavigator from './BottomTapNavigator'
-import AuthStackNavigator from './AuthStackNavigator'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { getSession } from '../persistence'
-import { setUser } from '../features/User/UserSlice'
+import { NavigationContainer } from "@react-navigation/native";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getSession } from "../persistence";
+import { setUser } from "../features/User/UserSlice";
+import BottomTapNavigator from "./BottomTapNavigator";
+import AuthStackNavigator from "./AuthStackNavigator";
 
-const Navigator = () => {
+export default function Navigator () {
   
-  const { user } = useSelector((state) => state.auth.value)
-  const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.auth.value);
+  const dispatch = useDispatch();
+
   useEffect(()=>{
     (async () => {
       try {
@@ -24,18 +24,15 @@ const Navigator = () => {
           }))
         }
       } catch (error) {
-        console.log(error)
-      }
-    })()
-  })
+        console.error(error)
+      };
+    });
+  });
 
   return (
     <NavigationContainer>
       {user ? <BottomTapNavigator /> : <AuthStackNavigator />}
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default Navigator
-
-const styles = StyleSheet.create({})

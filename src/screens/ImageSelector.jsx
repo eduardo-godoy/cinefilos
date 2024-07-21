@@ -103,6 +103,7 @@ export default function ImageSelector ({ navigation }) {
           
 
         { imageFromBase ? (<AddButton title="Eliminar Foto" onPress={confirmImage} /> ):( <AddButton title="Confirmar" onPress={confirmImage} /> ) }
+        <AddButton title="Atras" onPress={atras} />
         </>
       ) : (
         <>

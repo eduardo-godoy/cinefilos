@@ -1,17 +1,22 @@
-import { StyleSheet, View } from 'react-native';
-import { colors } from '../global/colors';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { StyleSheet, View, Image } from "react-native";
+import { colors } from "../global/colors";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
-import HomeStackNavigator from './HomeStackNavigator';
-import CartStackNavigator from './CartStackNavigator';
-import OrderStackNavigator from './OrderStackNavigator';
+import { useGetProfileimageQuery } from '../services/shopServices';
+import { useSelector } from "react-redux";
+import HomeStackNavigator from "./HomeStackNavigator";
+import CartStackNavigator from "./CartStackNavigator";
+import OrderStackNavigator from "./OrderStackNavigator";
 import MyProfileStackNavigator from "./MyProfileStackNavigator";
-import Header from '../components/Header';
+import Header from "../components/Header";
 
-
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 export default function BottomTapNavigator () {
+
+  const {imageCamera, localId} = useSelector((state) => state.auth.value);
+  const {data: imageFromBase} = useGetProfileimageQuery(localId);
+  const defaultImageRoute = "../../assets/user.png";
 
   return (
     <Tab.Navigator
@@ -69,7 +74,17 @@ export default function BottomTapNavigator () {
           tabBarIcon: () => {
             return (
               <View>
-                <FontAwesome5 name="user-alt" size={24} color={"white"} />
+                {imageFromBase || imageCamera ? (
+                  <Image
+                    source={{ uri: imageFromBase?.image || imageCamera }}
+                    style={styles.img}
+                  />
+                ) : (
+                  <Image
+                    style={styles.img}
+                    source={require(defaultImageRoute)}
+                  />
+                )}
               </View>
             );
           },
@@ -85,5 +100,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
     height: 80,
     fontFamily: "roboto"
+  },
+  img: {
+    width: 40,
+    height: 40,
+    borderRadius: 100
   }
 });
