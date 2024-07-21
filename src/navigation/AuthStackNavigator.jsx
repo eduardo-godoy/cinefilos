@@ -22,4 +22,3 @@ const AuthStackNavigator = () => {
 
 export default AuthStackNavigator
 
-const styles = StyleSheet.create({})

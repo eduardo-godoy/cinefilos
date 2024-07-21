@@ -1,118 +1,89 @@
-import React, { useEffect, useState } from "react";
-
-import {
-  Button,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
-
-
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useGetProductByIdQuery } from "../services/shopServices";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../features/Cart/CartSlice";
+import { colors } from "../global/colors";
 
 
-const ItemDetail = ({ route, navigation }) => {
-  const { width, height } = useWindowDimensions();
-  const [orientation, setOrientation] = useState("portrait");
-//  const [product, setProduct] = useState(null);
+export default function ItemDetail ({ route }) {
+
   const { productoId: idSelected } = route.params;
-
-  const dispatch = useDispatch()
-
-  const {data: product, error, isLoading} = useGetProductByIdQuery(idSelected);
-
-  console.log("width: " + width);
-  console.log("heigth: " + height);
-
-  // Landscape: Horisontal
-  // Portraint: Vertical
-  useEffect(() => {
-    if (width > height) setOrientation("landscape");
-    else setOrientation("portrait");
-  }, [width, height]);
+  const {data: product } = useGetProductByIdQuery(idSelected);
+  const dispatch = useDispatch();
 
 const handleAddCart = () => {
-  // agregar al carrito
-  dispatch(addCartItem)
   dispatch(addCartItem({...product, quantity: 1}))
-}
+};
 
   return (
     <View>
-      <Button onPress={() => navigation.goBack()} title="Back" />
       {product ? (
-        <View
-          style={
-            orientation === "portrait"
-              ? styles.mainContainer
-              : styles.mainContainerLandscape
-          }
-        >
-          <Image
-            source={{ uri: product.image }}
-            style={
-              orientation === "portrait" ? styles.image : styles.imageLandscape
-            }
-            resizeMode="cover"
-          />
-          <View
-            style={
-              orientation === "portrait"
-                ? styles.textContainer
-                : styles.textContainerLandscape
-            }
-          >
-            <Text>{product.title}</Text>
-            <Text>{product.sku}</Text>
-            <Text style={styles.price}>${product.price}</Text>
-            <Button title="Add cart" onPress={handleAddCart}></Button>
+        <View style={ styles.mainContainer }>
+           <Text style= { styles.title }>{product.title}</Text>
+          <Image source={{ uri: product.image }} style={ styles.image } resizeMode="cover"/>
+            <Text style={styles.price}>Genero: {product.category}</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.description}>{product.description}</Text>
+            <Text style={styles.price}>Precio:${product.price}</Text>
+            <Pressable style={styles.button} onPress={handleAddCart}>
+              <Text style={styles.cart}>Agregar al carrito</Text>
+            </Pressable>
           </View>
-        </View>
+          </View>
       ) : null}
     </View>
   );
 };
 
-export default ItemDetail;
 
 const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "flex-start",
-    padding: 10,
-  },
-  mainContainerLandscape: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    padding: 10,
-    gap: 10,
+    alignItems: "center",
+    paddingVertical: 5,
+    paddingHorizontal : 10,
+    backgroundColor: colors.gray100,
+    width: "100%",
+    height: "100%"
   },
   image: {
     width: "100%",
-    height: 250,
+    height: 425,
+    borderRadius: 10
   },
-  imageLandscape: {
-    width: "45%",
-    height: 200,
-  },
-
   textContainer: {
     flexDirection: "column",
-  },
-  textContainerLandscape: {
-    width: "50%",
-    flexDirection: "column",
     justifyContent: "center",
-    alignItems: "start",
-    gap: 10,
+    alignItems: "center"
   },
   price: {
-    textAlign: "right",
+    fontSize: 20,
+    fontFamily: "roboto",
+    textAlign: "center",
+    paddingBottom: 5
   },
+  title: {
+    fontSize: 25,
+    fontFamily: "roboto",
+    textAlign: "center",
+  },
+  button: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.red,
+    padding: 20,
+    width: "100%",
+    color: colors.white,
+    borderRadius: 10
+  },
+  description: {
+    fontSize: 16,
+    textAlign: "justify"
+  },
+  cart: {
+    fontFamily: "roboto",
+    color: colors.white,
+    textAlign: "center"
+  }
 });

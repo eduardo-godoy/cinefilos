@@ -6,11 +6,13 @@ import { useDispatch } from "react-redux"
 import { setUser } from "../features/User/UserSlice"
 import { insertSession } from "../persistence"
 import { loginValidations } from "../validations/loginValidations"
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 import InputForm from "../components/InputForm"
 import SubmitButton from "../components/SubmitButton"
 
-export default Login = ({ navigation }) => {
+export default function Login ({ navigation }) {
   const [email, setEmail] = useState()
   const [errorMail, setErrorMail] = useState("")
   const [password, setPassword] = useState("")
@@ -59,6 +61,7 @@ export default Login = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <View style={styles.container}>
+        <MaterialIcons name="local-movies" size={80} color="red" />
         <Text style={styles.title}>CINÉFILOS</Text>
         <Text style={styles.title2}>Iniciar sesión</Text>
         <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={true} />

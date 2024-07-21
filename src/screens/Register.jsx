@@ -9,7 +9,7 @@ import { registerValidations } from "../validations/registerValidations"
 import SubmitButton from "../components/SubmitButton"
 import InputForm from "../components/InputForm"
 
-const Register = ({ navigation }) => {
+export default function Register ({ navigation }) {
   const [email, setEmail] = useState("")
   const [errorMail, setErrorMail] = useState("")
   const [password, setPassword] = useState("")
@@ -84,8 +84,6 @@ const Register = ({ navigation }) => {
     </View>
   )
 }
-
-export default Register
 
 const styles = StyleSheet.create({
   main: {

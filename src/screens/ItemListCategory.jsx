@@ -56,12 +56,12 @@ const ItemListCategory = ({ navigation, route }) => {
       <Search
         error={error}
         onSearch={setKeyword}
-        goBack={() => navigation.goBack()}
       />
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={productsFiltered}
         renderItem={({ item }) => (
-          <ProductItem product={item} navigation={navigation} />
+          <ProductItem product={item} navigation={navigation}  style= { height="100%" }/>
         )}
         keyExtractor={(producto) => producto.id}
       />
@@ -74,11 +74,9 @@ export default ItemListCategory;
 const styles = StyleSheet.create({
   flatListContainer: {
     width: "100%",
-    backgroundColor: colors.green300,
-    flex: 1,
-    flexDirection: "column",
+    backgroundColor: colors.gray100,
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-  },
+  }
 });

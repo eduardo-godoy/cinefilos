@@ -1,20 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeStackNavigator from './HomeStackNavigator'
-import CartStackNavigator from './CartStackNavigator'
-import OrderStackNavigator from './OrderStackNavigator'
-import MyProfileStackNavigator from "./MyProfileStackNavigator";
-
-import Header from '../components/Header'
-import { colors } from '../global/colors'
-
+import { StyleSheet, View } from 'react-native';
+import { colors } from '../global/colors';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from "@expo/vector-icons";
+import HomeStackNavigator from './HomeStackNavigator';
+import CartStackNavigator from './CartStackNavigator';
+import OrderStackNavigator from './OrderStackNavigator';
+import MyProfileStackNavigator from "./MyProfileStackNavigator";
+import Header from '../components/Header';
 
 
 const Tab = createBottomTabNavigator()
 
-const BottomTapNavigator = () => {
+export default function BottomTapNavigator () {
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -26,68 +24,52 @@ const BottomTapNavigator = () => {
       })}
     >
       <Tab.Screen
-        name="Shop"
+        name="Tienda"
         component={HomeStackNavigator}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return (
               <View>
-                <FontAwesome5
-                  name="store"
-                  size={24}
-                  color={focused ? "black" : colors.lightGray}
-                />
+                <FontAwesome5 name="shopping-bag" size={24} color={"white"} />
               </View>
             );
           },
         }}
       />
       <Tab.Screen
-        name="Cart"
+        name="Carrito"
         component={CartStackNavigator}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return (
               <View>
-                <FontAwesome5
-                  name="shopping-cart"
-                  size={24}
-                  color={focused ? "black" : colors.lightGray}
-                />
+                <FontAwesome5 name="shopping-cart" size={24} color={"white"} />
               </View>
             );
           },
         }}
       />
       <Tab.Screen
-        name="Order"
+        name="Ordenes"
         component={OrderStackNavigator}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return (
               <View>
-                <FontAwesome5
-                  name="receipt"
-                  size={24}
-                  color={focused ? "black" : colors.lightGray}
-                />
+                <FontAwesome5 name="receipt" size={24} color={"white"} />
               </View>
             );
           },
         }}
       />
       <Tab.Screen
-        name="My Buttom Profile"
+        name="Mi perfil"
         component={MyProfileStackNavigator}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return (
               <View>
-                <FontAwesome5
-                  name="user-alt"
-                  size={24}
-                  color={focused ? "black" : colors.lightGray}
-                />
+                <FontAwesome5 name="user-alt" size={24} color={"white"} />
               </View>
             );
           },
@@ -95,13 +77,13 @@ const BottomTapNavigator = () => {
       />
     </Tab.Navigator>
   );
-}
+};
 
-export default BottomTapNavigator
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.green700,
-    height: 60
+    backgroundColor: colors.black,
+    height: 80,
+    fontFamily: "roboto"
   }
-})
+});

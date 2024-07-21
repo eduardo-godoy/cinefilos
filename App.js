@@ -7,7 +7,7 @@ import Navigator from "./src/navigation/Navigator";
 export default function App() {
 
   const [fontsLoaded, fontError] = useFonts({
-    Roboto: require("./assets/Roboto-Black.ttf")
+    roboto: require("./assets/Roboto-Black.ttf")
   });
 
   if (!fontsLoaded && !fontError) {
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,
-    fontFamily: "Roboto"
+    fontFamily: "roboto"
   }
 });

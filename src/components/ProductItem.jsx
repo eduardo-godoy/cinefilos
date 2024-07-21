@@ -21,16 +21,13 @@ const ProductItem = ({
 
   return (
     <Card style={styles.additionalStylesCard}>
-      <Pressable
-        style={styles.pressable}
-        onPress={handleNavigate}
-      >
-        <Text style={styles.textCategory}>{product.title}</Text>
+      <Pressable style={styles.pressable} onPress={handleNavigate}>
         <Image
-          resizeMode="cover"
           style={styles.image}
           source={{ uri: product.image }}
+          resizeMode="cover"
         />
+        <Text style={styles.textCategory}>{product.title}</Text>
       </Pressable>
     </Card>
   );
@@ -39,28 +36,34 @@ const ProductItem = ({
 export default ProductItem;
 
 const styles = StyleSheet.create({
+  additionalStylesCard: {
+    height: 425,
+    width: 300,
+    backgroundColor: colors.white,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 30,
+    marginTop: 10,
+    flex: 1,
+  }, 
   image: {
-    height: 120,
-    width: "30%",
+    height: 350,
+    width: "85%",
     borderRadius: 8,
   },
-  additionalStylesCard: {
-    height: 120,
-    width: 300,
-    margin: 10,
-    paddingLeft: 10,
-    justifyContent: "space-between",
-    flexDirection: "row",
-  },
   textCategory: {
-    color: colors.green900,
-    width: '70%',
+    fontSize: 20,
+    color: colors.black,
+    width: '100%',
+    fontFamily: "roboto",
+    textAlign: "center",
+    padding: 15
   },
   pressable : {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingLeft: 10,
+    height: 400,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   }
 });
