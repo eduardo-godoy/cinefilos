@@ -62,7 +62,7 @@ export default function Login ({ navigation }) {
     <View style={styles.main}>
       <View style={styles.container}>
         <MaterialIcons name="local-movies" size={80} color="red" />
-        <Text style={styles.title}>CINÉFILOS</Text>
+        <Text style={styles.title}>Cinéfilos</Text>
         <Text style={styles.title2}>Iniciar sesión</Text>
         <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={true} />
         <InputForm placeholder="Ingrese su contraseña" onChange={setPassword} error={errorPassword} isSecure={true}/>

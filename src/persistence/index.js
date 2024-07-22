@@ -14,7 +14,7 @@ export const initSQLiteDB = () => {
         });
     });
     return promise
-}
+};
 
 export const insertSession = ({ email, localId, token }) => {
     const promise = new Promise((resolve, reject) => {
