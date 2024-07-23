@@ -21,42 +21,54 @@ export default function Login ({ navigation }) {
 
   const [triggerLogin, result] = useSignInMutation() 
 
-  useEffect(()=> {
-    if (result?.data && result.isSuccess) {
-      insertSession({
-        email: result.data.email,
-        localId: result.data.localId,
-        token: result.data.idToken
-      }).then((response)=> {
-        console.log(response)
-        dispatch(
-          setUser({
-            email: result.data.email,
-            idToken: result.data.idToken,
-            localId: result.data.localId,
-          })
-        );        
-      }).catch(err => {
-        console.error(err)
-      })
-    }
+  
+    useEffect(() => {
+      if (result.isSuccess) {
+          dispatch(
+              setUser({
+                  email: result.data.email,
+                  idToken: result.data.idToken,
+                  localId: result.data.localId,
+              })
+          )
+      }
+      else if(result.isError) {
+          let message = result.error.data.error.message
+          message = message.split(" ")[0]
+          switch (message) {
+              case "TOO_MANY_ATTEMPTS_TRY_LATER":
+                  setErrorPassword("Ha ingresado la contraseña mal demasiadas veces")
+                  break;
+              case "INVALID_LOGIN_CREDENTIALS":
+                  setErrorPassword("La contraseña ingresada es incorrecta")
+                  break;
+              default:
+                  break;
+          }
+      }
   }, [result])
 
   const onSubmit = () => {
     try {
-      setErrorMail("")
-      setErrorPassword("")
-      loginValidations.validateSync({ email, password })
-      triggerLogin({ email, password, returnSecureToken: true })
-    } catch (err) {
-      switch (err.path) {
-        case "email":
-          setErrorMail(err.message)
-        case "password":
-          setErrorPassword(err.message)
-      }
+        setErrorMail("");
+        setErrorPassword("");
+        loginValidations.validateSync({ email, password }, { abortEarly: false })
+        triggerLogin({ email, password })
+    } catch (error) {
+        error.inner.forEach(e => {
+            switch (e.path) {
+                case "email":
+                    setErrorMail(e.message)
+                  break;
+                case "password":
+                    setErrorPassword(e.message)
+                  break;
+                default:
+                    break;
+            }
+        })
     }
-  }
+}
 
   return (
     <View style={styles.main}>
@@ -64,7 +76,7 @@ export default function Login ({ navigation }) {
         <MaterialIcons name="local-movies" size={80} color="red" />
         <Text style={styles.title}>Cinéfilos</Text>
         <Text style={styles.title2}>Iniciar sesión</Text>
-        <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={true} />
+        <InputForm placeholder="Ingrese su Email" onChange={setEmail} error={errorMail} isSecure={false} />
         <InputForm placeholder="Ingrese su contraseña" onChange={setPassword} error={errorPassword} isSecure={true}/>
         <SubmitButton onPress={onSubmit} title="Ingresar"/>
         <Text style={styles.sub}>¿No tienes una cuenta?</Text>

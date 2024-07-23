@@ -44,7 +44,7 @@ export default function MyProfile ({ navigation }) {
           source={require(defaultImageRoute)}
         />
       )}
-      <Text >{user}</Text>
+      <Text style={styles.text}>Email: {user}</Text>
       <AddButton
         onPress={launchCamera}
         title={
@@ -79,5 +79,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 7,
     borderRadius: 10
+  },
+  text: {
+    backgroundColor: colors.red,
+    color: colors.white,
+    fontSize: 18,
+    padding: 8,
+    margin: 10,
+    width: "75%",
+    fontFamily: "roboto",
+    textAlign: "center",
+    borderRadius: 10,
+    borderWidth: 1,
   }
 });

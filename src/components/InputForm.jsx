@@ -2,15 +2,19 @@ import { StyleSheet, Text, TextInput, View } from "react-native"
 import { useState } from "react"
 import { colors } from "../global/colors"
 
-export default InputForm = ({ placeholder, onChange, error = "", isSecure = false }) => {
-  const [input, setInput] = useState("");
-  const onChangeText = (text) => { setInput(text); onChange(text) }
+export default InputForm = ({ placeholder, onChange, error , isSecure, value }) => {
+  const [input, setInput] = useState("")
+  const onChangeText = (text) => {
+      setInput(text)
+      onChange(text)
+  }
+
 
   return (
     <View style={styles.inputContainer}>
       <TextInput
         style={styles.input}
-        value={input}
+        value={value}
         onChangeText={onChangeText}
         secureTextEntry={isSecure}
         placeholder={placeholder}
@@ -34,17 +38,19 @@ const styles = StyleSheet.create({
   },
   error: {
     paddintTop: 2,
-    fontSize: 16,
-    color: "red",
+    fontSize: 18,
+    fontFamily: "roboto",
+    color: colors.red,
+    textAlign: "center"
   },
   input: {
-    width: "90%",
+    width: "100%",
     borderWidth: 0,
     borderBottomWidth: 1,
     borderBottomColor: colors.black,
     backgroundColor: colors.gray100,
     borderRadius: 5,
     padding: 2,
-    fontSize: 18,
+    fontSize: 22,
   },
 })

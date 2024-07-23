@@ -1,24 +1,24 @@
-import { Pressable, StyleSheet, Text, View } from "react-native"
-import { useState, useEffect } from "react"
-import { colors } from "../global/colors"
-import { useSignUpMutation } from "../services/authService"
-import { useDispatch } from "react-redux"
-import { setUser } from "../features/User/UserSlice"
-import { registerValidations } from "../validations/registerValidations"
-
-import SubmitButton from "../components/SubmitButton"
-import InputForm from "../components/InputForm"
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useState, useEffect } from "react";
+import { colors } from "../global/colors";
+import { useSignUpMutation } from "../services/authService";
+import { useDispatch } from "react-redux";
+import { setUser } from "../features/User/UserSlice";
+import { registerValidations } from "../validations/registerValidations";
+import SubmitButton from "../components/SubmitButton";
+import InputForm from "../components/InputForm";
 
 export default function Register ({ navigation }) {
-  const [email, setEmail] = useState("")
-  const [errorMail, setErrorMail] = useState("")
-  const [password, setPassword] = useState("")
-  const [errorPassword, setErrorPassword] = useState("")
-  const [confirmPassword, setconfirmPassword] = useState("")
-  const [errorConfirmPassword, setErrorConfirmPassword] = useState("")
 
-  const dispatch = useDispatch()
-  const [triggerSignUp, result] = useSignUpMutation()
+  const [email, setEmail] = useState("");
+  const [errorMail, setErrorMail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
+  const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+
+  const dispatch = useDispatch();
+  const [triggerSignUp,result,data,isError,isSuccess] = useSignUpMutation();
 
   useEffect(() => {
     if (result.isSuccess) {
@@ -30,28 +30,33 @@ export default function Register ({ navigation }) {
         })
       )
     }
-  }, [result])
+  }, [result,data,isError,isSuccess])
 
   const onSubmit = () => {
     try {
-      registerValidations.validateSync({ email, password, confirmPassword })
-      triggerSignUp({ email, password, returnSecureToken: true })
-    } catch (err) {
-      switch (err.path) {
-        case "email":
-          setErrorMail(err.message)
-          break;
-        case "password":
-          setErrorPassword(err.message)
-          break;
-        case "confirmPassword":
-          setErrorConfirmPassword(err.message)
-          break;
-        default:
-          break;   
-      }
-    }
-  }
+      setErrorMail("");
+      setErrorPassword("");
+      setErrorConfirmPassword("");
+      registerValidations.validateSync({email,password,confirmPassword}, {abortEarly:false});
+      triggerSignUp({email,password});
+    } catch (error) {
+        error.inner.forEach(e =>  {
+          switch (e.path) {
+            case "email":
+              setErrorMail(e.message)
+              break;
+            case "password":
+              setErrorPassword(e.message)
+              break;
+            case "confirmPassword":
+              setErrorConfirmPassword(e.message)
+              break;
+            default:
+              break;
+          };
+      });
+    };
+  };
 
   return (
     <View style={styles.main}>
@@ -61,7 +66,7 @@ export default function Register ({ navigation }) {
           placeholder="Ingrese su Email"
           onChange={setEmail}
           error={errorMail}
-          isSecure={true}
+          isSecure={false}
         />
         <InputForm
           placeholder="Ingrese su contraseña"
@@ -82,8 +87,8 @@ export default function Register ({ navigation }) {
         </Pressable>
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   main: {
@@ -129,4 +134,4 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: "bold"
   }
-})
+});
