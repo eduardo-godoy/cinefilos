@@ -11,23 +11,26 @@ export default function Navigator () {
   const { user } = useSelector((state) => state.auth.value);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     (async () => {
       try {
         const response = await getSession();
-        if(response.rows.length){
-          const user = response.rows._array[0]
-          dispatch(setUser({
-            email: user.email,
-            localId: user.localId,
-            idToken: user.token,
-          }))
+        if (response.rows._array.length) {
+          const user = response.rows._array[0];
+          dispatch(
+            setUser({
+              email: user.email,
+              localId: user.localId,
+              idToken: user.token,
+            })
+          );
         }
       } catch (error) {
-        console.error(error)
-      };
-    });
-  });
+        console.log(error);
+      }
+    })();
+  }, []);
+  
 
   return (
     <NavigationContainer>

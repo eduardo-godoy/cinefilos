@@ -1,10 +1,12 @@
 import * as ExpoSQLite from "expo-sqlite";
+import { Platform } from 'react-native';
 
-const db = ExpoSQLite.openDatabase("sessions.db");
+if(Platform.OS !== 'web') db = ExpoSQLite.openDatabase('sessions.db');
+
 
 export const initSQLiteDB = () => {
     const promise = new Promise((resolve, reject)=>{
-        db.transaction((tx)=> {
+      db.transaction((tx)=> {
             tx.executeSql(
               "CREATE TABLE IF NOT EXISTS sessions (localId TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL, token TEXT NOT NULL);",
               [],

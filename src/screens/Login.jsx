@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native"
+import { Pressable, StyleSheet, Text, View, Platform } from "react-native"
 import { useState, useEffect } from "react"
 import { colors } from "../global/colors"
 import { useSignInMutation } from "../services/authService"
@@ -13,62 +13,61 @@ import InputForm from "../components/InputForm"
 import SubmitButton from "../components/SubmitButton"
 
 export default function Login ({ navigation }) {
-  const [email, setEmail] = useState()
+  const [email, setEmail] = useState("")
   const [errorMail, setErrorMail] = useState("")
   const [password, setPassword] = useState("")
   const [errorPassword, setErrorPassword] = useState("")
   const dispatch = useDispatch()
 
-  const [triggerLogin, result] = useSignInMutation() 
+  const [triggerSignIn, result] = useSignInMutation() 
 
   
-    useEffect(() => {
-      if (result.isSuccess) {
-          dispatch(
-              setUser({
-                  email: result.data.email,
-                  idToken: result.data.idToken,
-                  localId: result.data.localId,
-              })
-          )
-      }
-      else if(result.isError) {
-          let message = result.error.data.error.message
-          message = message.split(" ")[0]
-          switch (message) {
-              case "TOO_MANY_ATTEMPTS_TRY_LATER":
-                  setErrorPassword("Ha ingresado la contraseña mal demasiadas veces")
-                  break;
-              case "INVALID_LOGIN_CREDENTIALS":
-                  setErrorPassword("La contraseña ingresada es incorrecta")
-                  break;
-              default:
-                  break;
+  useEffect(() => {
+    if (result?.data && result.isSuccess) {
+      (async () => {
+        try {
+          if (Platform.OS !== "web") {
+            await insertSession({
+              email: result.data.email,
+              localId: result.data.localId,
+              token: result.data.idToken,
+            });
           }
-      }
-  }, [result])
-
-  const onSubmit = () => {
-    try {
-        setErrorMail("");
-        setErrorPassword("");
-        loginValidations.validateSync({ email, password }, { abortEarly: false })
-        triggerLogin({ email, password })
-    } catch (error) {
-        error.inner.forEach(e => {
-            switch (e.path) {
-                case "email":
-                    setErrorMail(e.message)
-                  break;
-                case "password":
-                    setErrorPassword(e.message)
-                  break;
-                default:
-                    break;
-            }
-        })
+          dispatch(
+            setUser({
+              email: result.data.email,
+              idToken: result.data.idToken,
+              localId: result.data.localId,
+            })
+          );
+        } catch (error) {
+          console.log(error);
+        }
+      })();
     }
-}
+  }, [result]);
+
+    const onSubmit = () => {
+      try {
+          setErrorMail("");
+          setErrorPassword("");
+          loginValidations.validateSync({ email, password }, { abortEarly: false })
+          triggerSignIn({ email, password, returnSecureToken: true })
+      } catch (error) {
+          error.inner.forEach(e => {
+              switch (e.path) {
+                  case "email":
+                      setErrorMail(e.message)
+                    break;
+                  case "password":
+                      setErrorPassword(e.message)
+                    break;
+                  default:
+                      break;
+              }
+          })
+      }
+  }
 
   return (
     <View style={styles.main}>
