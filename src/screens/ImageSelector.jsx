@@ -85,6 +85,19 @@ export default function ImageSelector ({ navigation }) {
     }
   };
 
+  const deleteImage = async () => {
+    try {
+      dispatch(setCameraImage(image));
+      triggerPostImage({ image, localId });
+      if (isImageFromCamera) {
+        ExpoLibrary.createAssetAsync(imageURI);
+      }
+      navigation.goBack();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       {image || imageFromBase ? (
@@ -100,9 +113,9 @@ export default function ImageSelector ({ navigation }) {
             title="Elegir otra foto"
             onPress={pickLibraryImage}
           />
-          
+         
 
-        { imageFromBase ? (<AddButton title="Eliminar Foto" onPress={confirmImage} /> ):( <AddButton title="Confirmar" onPress={confirmImage} /> ) }
+        {imageFromBase ? <AddButton title="Eliminar" onPress={deleteImage} /> :  <AddButton title="Confirmar" onPress={confirmImage} />  }
         <AddButton title="Atras" onPress={atras} />
         </>
       ) : (

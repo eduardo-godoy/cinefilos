@@ -47,6 +47,23 @@ export default function Login ({ navigation }) {
     }
   }, [result]);
 
+  useEffect(() => {
+    if(result.isError) {
+        let message = result.error.data.error.message
+        message = message.split(" ")[0]
+        switch (message) {
+            case "TOO_MANY_ATTEMPTS_TRY_LATER":
+                setErrorPassword("Ha ingresado la contraseña mal demasiadas veces")
+                break;
+            case "INVALID_LOGIN_CREDENTIALS":
+                setErrorPassword("La contraseña ingresada es incorrecta")
+                break;
+            default:
+                break;
+        }
+    }
+}, [result])
+
     const onSubmit = () => {
       try {
           setErrorMail("");
