@@ -96,8 +96,8 @@ export default function ImageSelector ({ navigation }) {
           <AddButton title="Tomar otra foto" onPress={pickImage} />
           <AddButton title="Elegir otra foto" onPress={pickLibraryImage} />
 
-          {imageFromBase && image ? <AddButton title="Confirmar" onPress={confirmImage} />  : null }
-
+          {imageFromBase || image ? <AddButton title="Confirmar" onPress={confirmImage} />  : null }
+          
           <AddButton title="Atras" onPress={atras} />
         </>
       ) : (

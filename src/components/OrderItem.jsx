@@ -14,9 +14,9 @@ export default function OrderItem ({ order }) {
     <View style={styles.card} onPress={() => {}}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
-        {new Date(order?.createdAt || null).toLocaleString()}
+          Creación: {new Date(order?.createdAt || null).toLocaleString()}
         </Text>
-        <Text style={styles.text2}>${total}</Text>
+        <Text style={styles.text2}>Total: ${total}</Text>
       </View>
       <Feather name="search" size={10} color="black" />
     </View>
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start"
   },
   text: {
+    width: "100%",
     fontSize: 17,
     color: "black",
     fontFamily: "roboto"
