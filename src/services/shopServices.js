@@ -5,7 +5,7 @@ export const shopApi = createApi({
   
   reducerPath: "shopApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
-  tagTypes: ["profileImageGet"],
+  tagTypes: ["profileImageGet",  'getOrders'],
   endpoints: (builder) => ({
     getCategories: builder.query({
       query: () => `categories.json`,
@@ -53,10 +53,15 @@ export const shopApi = createApi({
       }),
       invalidatesTags: ["profileImageGet"],
     }),
+    getOrders: builder.query({
+      query: () => `orders.json`, 
+      method: "GET",
+      providesTags: ['getOrders']
+  }),
   }),
 });
 
-export const {
+export const {useGetOrdersQuery,
   useGetCategoriesQuery,
   useGetProductsByCategoryQuery,
   useGetProductByIdQuery,

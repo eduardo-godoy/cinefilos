@@ -1,9 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { colors } from '../global/colors';
+import { useDispatch } from 'react-redux';
+import { removeCartItem } from '../features/Cart/CartSlice';
+import { reset } from "../features/Counter/CounterSlice"
 import Feather from '@expo/vector-icons/Feather';
 
 
 export default function CartItem ({ cartItem }) {
+
+  const dispatch = useDispatch()
+
+  const handleDelete = () => {
+    const itemRemove = {...cartItem,  quantity: 1}
+    dispatch(removeCartItem(itemRemove));
+    dispatch(reset())
+  };
   
   return (
     <View style={styles.card}>
@@ -28,7 +39,9 @@ export default function CartItem ({ cartItem }) {
             </Text> : 
             null}
       </View>
+      <Pressable onPress={handleDelete}>
       <Feather name="x" style={styles.trash} size={35} color="black"  />
+      </Pressable>
     </View>
   );
 };
