@@ -2,7 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { colors } from "../global/colors";
 
-const OrderItem = ({ order }) => {
+
+export default function OrderItem ({ order }) {
+
   const total = order.items.reduce(
     (acc, currentItem) => (acc += currentItem.price * currentItem.quantity),
     0
@@ -21,7 +23,6 @@ const OrderItem = ({ order }) => {
   );
 };
 
-export default OrderItem;
 
 const styles = StyleSheet.create({
   card: {
@@ -33,20 +34,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "center"
   },
   textContainer: {
     width: "70%",
     flexDirection: "column",
     justifyContent: "flex-start",
-    alignItems: "flex-start",
+    alignItems: "flex-start"
   },
   text: {
     fontSize: 17,
     color: "black",
+    fontFamily: "roboto"
   },
   text2: {
     fontSize: 19,
     color: "gray",
+    fontFamily: "roboto"
   },
 });

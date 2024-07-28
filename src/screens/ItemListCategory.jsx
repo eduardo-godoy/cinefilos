@@ -1,75 +1,44 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import React, { useEffect, useState } from "react";
-
+import { FlatList, StyleSheet, View, Text } from "react-native";
+import { useEffect, useState } from "react";
 import { colors } from "../global/colors";
-
-//import products from "../data/products.json";
+import { useGetProductsByCategoryQuery } from "../services/shopServices";
 import Search from "../components/Search";
 import ProductItem from "../components/ProductItem.jsx";
-import { useGetProductsByCategoryQuery } from "../services/shopServices.js";
 
-const ItemListCategory = ({ navigation, route }) => {
+export default function ItemListCategory ({ navigation, route }) {
+
   const [keyWord, setKeyword] = useState("");
   const [productsFiltered, setProductsFiltered] = useState([]);
-  const [error, setError] = useState("");
 
   const { category: categorySelected } = route.params;
-
   const {data: productsFetched, error: errorFetched, isLoading} = useGetProductsByCategoryQuery(categorySelected);
-  console.log(categorySelected)
+  
   useEffect(() => {
-    const regexDigits = /\d/;
-    const hasDigits = regexDigits.test(keyWord);
-    if (hasDigits) {
-      setError("Don't use digits");
-      return;
-    }
-
-    const regexThreeOrMoreCharacters = /[a-zA-Z]{3,}/;
-    const hasThreeOrMoreChar = regexThreeOrMoreCharacters.test(keyWord);
-
-    if (!hasThreeOrMoreChar && keyWord.length) {
-      setError("Type 3 or more characters");
-      return;
-    }
-
-    console.log(error);
-
-/*      const productsPreFiltered = products.filter(
-      (product) => product.category === categorySelected
-    );  
-    */
-
     if(!isLoading){
-    const productsFiter = productsFetched.filter((product) =>
-      product.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase())
-    );
-    //console.log(productsFiter);
-    setProductsFiltered(productsFiter);
-    setError("");
+      const productsFiter = productsFetched.filter((product) =>
+        product.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase()
+      ));
+      setProductsFiltered(productsFiter);
     }
-
   }, [keyWord, categorySelected, productsFetched, isLoading]);
 
   return (
-    <View style={styles.flatListContainer}>
-      <Search
-        error={error}
-        onSearch={setKeyword}
-      />
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        data={productsFiltered}
-        renderItem={({ item }) => (
-          <ProductItem product={item} navigation={navigation}  style= { height="100%" }/>
-        )}
-        keyExtractor={(producto) => producto.id}
-      />
+    <View>
+      <View style={styles.flatListContainer}>
+        <Search onSearch={setKeyword} />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={productsFiltered}
+          renderItem={({ item }) => (
+            <ProductItem product={item} navigation={navigation}  style= { height="100%" }/>
+          )}
+          keyExtractor={(producto) => producto.id}
+        />
+      </View>
     </View>
   );
 };
 
-export default ItemListCategory;
 
 const styles = StyleSheet.create({
   flatListContainer: {
@@ -77,6 +46,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.gray100,
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding: 10
+  },
+  text: {
+    color: colors.red,
+    flex: 1
   }
 });

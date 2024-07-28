@@ -1,25 +1,24 @@
-import { Pressable, StyleSheet, Text, View, Platform } from "react-native"
-import { useState, useEffect } from "react"
-import { colors } from "../global/colors"
-import { useSignInMutation } from "../services/authService"
-import { useDispatch } from "react-redux"
-import { setUser } from "../features/User/UserSlice"
-import { insertSession } from "../persistence"
-import { loginValidations } from "../validations/loginValidations"
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { Pressable, StyleSheet, Text, View, Platform } from "react-native";
+import { useState, useEffect } from "react";
+import { colors } from "../global/colors";
+import { useSignInMutation } from "../services/authService";
+import { useDispatch } from "react-redux";
+import { setUser } from "../features/User/UserSlice";
+import { insertSession } from "../persistence";
+import { loginValidations } from "../validations/loginValidations";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import InputForm from "../components/InputForm";
+import SubmitButton from "../components/SubmitButton";
 
-
-import InputForm from "../components/InputForm"
-import SubmitButton from "../components/SubmitButton"
 
 export default function Login ({ navigation }) {
-  const [email, setEmail] = useState("")
-  const [errorMail, setErrorMail] = useState("")
-  const [password, setPassword] = useState("")
-  const [errorPassword, setErrorPassword] = useState("")
-  const dispatch = useDispatch()
 
-  const [triggerSignIn, result] = useSignInMutation() 
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState("");
+  const [errorMail, setErrorMail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+  const [triggerSignIn, result] = useSignInMutation();
 
   
   useEffect(() => {
@@ -41,7 +40,7 @@ export default function Login ({ navigation }) {
             })
           );
         } catch (error) {
-          console.log(error);
+          alert(error);
         }
       })();
     }
@@ -49,42 +48,42 @@ export default function Login ({ navigation }) {
 
   useEffect(() => {
     if(result.isError) {
-        let message = result.error.data.error.message
-        message = message.split(" ")[0]
+      let message = result.error.data.error.message
+      message = message.split(" ")[0]
         switch (message) {
-            case "TOO_MANY_ATTEMPTS_TRY_LATER":
-                setErrorPassword("Ha ingresado la contraseña mal demasiadas veces")
-                break;
-            case "INVALID_LOGIN_CREDENTIALS":
-                setErrorPassword("La contraseña ingresada es incorrecta")
-                break;
-            default:
-                break;
+          case "TOO_MANY_ATTEMPTS_TRY_LATER":
+            setErrorPassword("Ha ingresado la contraseña mal demasiadas veces")
+          break;
+          case "INVALID_LOGIN_CREDENTIALS":
+            setErrorPassword("La contraseña ingresada es incorrecta")
+          break;
+          default:
+          break;
         }
-    }
-}, [result])
+      }
+  }, [result]);
 
-    const onSubmit = () => {
-      try {
-          setErrorMail("");
-          setErrorPassword("");
-          loginValidations.validateSync({ email, password }, { abortEarly: false })
-          triggerSignIn({ email, password, returnSecureToken: true })
+  const onSubmit = () => {
+    try {
+      setErrorMail("");
+      setErrorPassword("");
+      loginValidations.validateSync({ email, password }, { abortEarly: false })
+      triggerSignIn({ email, password, returnSecureToken: true })
       } catch (error) {
           error.inner.forEach(e => {
-              switch (e.path) {
-                  case "email":
-                      setErrorMail(e.message)
-                    break;
-                  case "password":
-                      setErrorPassword(e.message)
-                    break;
-                  default:
-                      break;
-              }
-          })
-      }
-  }
+            switch (e.path) {
+              case "email":
+                setErrorMail(e.message)
+              break;
+              case "password":
+                setErrorPassword(e.message)
+              break;
+              default:
+              break;
+          };
+      });
+    };
+  };
 
   return (
     <View style={styles.main}>
@@ -101,8 +100,8 @@ export default function Login ({ navigation }) {
         </Pressable>
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   main: {
@@ -153,4 +152,4 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: "bold"
   }
-})
+});

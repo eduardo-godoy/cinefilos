@@ -1,23 +1,19 @@
 import { Image, Pressable, StyleSheet, Text } from "react-native";
-import React from "react";
-import Card from "./Card";
 import { colors } from "../global/colors";
-
-
 import { useDispatch } from "react-redux";
 import { setItemSelected } from "../features/Shop/ShopSlice";
+import React from "react";
+import Card from "./Card";
 
-const ProductItem = ({
-  product,
-  navigation
-}) => {
 
-  const dispatch = useDispatch()
+export default function ProductItem ({ product, navigation })  {
+
+  const dispatch = useDispatch();
 
   const handleNavigate = () => {
     dispatch(setItemSelected(product.title))
     navigation.navigate("ItemDetail", { productoId: product.id });
-  }
+  };
 
   return (
     <Card style={styles.additionalStylesCard}>
@@ -33,7 +29,6 @@ const ProductItem = ({
   );
 };
 
-export default ProductItem;
 
 const styles = StyleSheet.create({
   additionalStylesCard: {
@@ -44,12 +39,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 30,
     marginTop: 10,
-    flex: 1,
+    flex: 1
   }, 
   image: {
     height: 350,
     width: "85%",
-    borderRadius: 8,
+    borderRadius: 8
   },
   textCategory: {
     fontSize: 20,
@@ -64,6 +59,6 @@ const styles = StyleSheet.create({
     height: 400,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   }
 });

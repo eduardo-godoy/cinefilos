@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { colors } from '../global/colors';
+import { StyleSheet, Text, View } from "react-native";
+import { colors } from "../global/colors";
 
 
 export default function Header ({ title }) {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: colors.black,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   text: {
     color: colors.white,

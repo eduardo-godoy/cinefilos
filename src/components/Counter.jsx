@@ -1,23 +1,16 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "../global/colors";
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { decrement, increment, incrementByAmount, reset } from "../features/Counter/CounterSlice";
 
 
-const Counter = () => {
+export default function Counter () {
 
-  const count = useSelector((state)=> state.counter.value)
-  const dispatch = useDispatch()
-
+  const count = useSelector((state)=> state.counter.value);
+  const dispatch = useDispatch();
   const [inputToAdd, setInputToAdd] = useState(null);
   
-  //let count = 0
-
-  console.log(count);
-
   return (
     <View style={styles.container}>
       <View style={styles.buttonsContainer}>
@@ -50,7 +43,6 @@ const Counter = () => {
   );
 };
 
-export default Counter;
 
 const styles = StyleSheet.create({
   container: {
@@ -59,17 +51,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     backgroundColor: colors.green300,
-    padding: 10,
+    padding: 10
   },
   buttonsContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 10
   },
   button: {
     padding: 10,
-    backgroundColor: colors.green900,
+    backgroundColor: colors.green900
   },
   span: {
     backgroundColor: colors.lightGray,
@@ -77,7 +69,7 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: "center",
     fontSize: 20,
-    color: colors.platinum,
+    color: colors.platinum
   },
   spanInput: {
     backgroundColor: colors.lightGray,
@@ -85,10 +77,10 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: "center",
     fontSize: 16,
-    color: colors.green900,
+    color: colors.green900
   },
   buttonText: {
     fontSize: 18,
-    fontFamily: "Josefin",
+    fontFamily: "roboto"
   },
 });

@@ -37,8 +37,8 @@ export default function Register ({ navigation }) {
       setErrorMail("");
       setErrorPassword("");
       setErrorConfirmPassword("");
-      registerValidations.validateSync({email,password,confirmPassword}, {abortEarly:false});
-      triggerSignUp({email,password,returnSecureToken: true});
+      registerValidations.validateSync({ email,password,confirmPassword }, { abortEarly:false });
+      triggerSignUp({ email,password,returnSecureToken: true });
     } catch (error) {
         error.inner.forEach(e =>  {
           switch (e.path) {
@@ -51,9 +51,9 @@ export default function Register ({ navigation }) {
             case "confirmPassword":
               setErrorConfirmPassword(e.message)
               break;
-            default:
-              break;
-          };
+          default:
+            break;
+        };
       });
     };
   };

@@ -2,13 +2,14 @@ import { StyleSheet, Text, TextInput, View } from "react-native"
 import { useState } from "react"
 import { colors } from "../global/colors"
 
-export default InputForm = ({ placeholder, onChange, error , isSecure, value }) => {
-  const [input, setInput] = useState("")
+export default function InputForm ({ placeholder, onChange, error , isSecure, value }) {
+
+  const [input, setInput] = useState("");
+
   const onChangeText = (text) => {
       setInput(text)
       onChange(text)
-  }
-
+  };
 
   return (
     <View style={styles.inputContainer}>
@@ -21,15 +22,15 @@ export default InputForm = ({ placeholder, onChange, error , isSecure, value }) 
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: "100%",
+    width: "100%"
   },
   subtitle: {
     width: "90%",
@@ -51,6 +52,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.gray100,
     borderRadius: 5,
     padding: 2,
-    fontSize: 22,
+    fontSize: 22
   },
-})
+});

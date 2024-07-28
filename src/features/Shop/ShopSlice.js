@@ -18,5 +18,5 @@ export const shopSlice = createSlice({
     }
 })
 
-export const {setCategorySelected, setItemSelected} = shopSlice.actions
+export const {setCategorySelected, setItemSelected} = shopSlice.actions;
 export default shopSlice.reducer;

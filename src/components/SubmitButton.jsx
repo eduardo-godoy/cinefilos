@@ -1,13 +1,13 @@
-import { Pressable, StyleSheet, Text } from "react-native"
-import { colors } from "../global/colors"
+import { Pressable, StyleSheet, Text } from "react-native";
+import { colors } from "../global/colors";
 
 export default SubmitButton = ({ onPress, title }) => {
   return (
     <Pressable onPress={onPress} style={styles.button}>
       <Text style={styles.text}>{title}</Text>
     </Pressable>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     fontSize: 22,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: "roboto"
   }
-})
+});

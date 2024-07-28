@@ -60,7 +60,8 @@ export const shopApi = createApi({
   }),
 });
 
-export const {useGetOrdersQuery,
+export const {
+  useGetOrdersQuery,
   useGetCategoriesQuery,
   useGetProductsByCategoryQuery,
   useGetProductByIdQuery,

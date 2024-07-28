@@ -2,7 +2,7 @@ import { StyleSheet, View, Image } from "react-native";
 import { colors } from "../global/colors";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { useGetProfileimageQuery } from '../services/shopServices';
+import { useGetProfileimageQuery } from "../services/shopServices";
 import { useSelector } from "react-redux";
 import HomeStackNavigator from "./HomeStackNavigator";
 import CartStackNavigator from "./CartStackNavigator";

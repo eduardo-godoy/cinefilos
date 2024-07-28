@@ -20,14 +20,11 @@ export const authSlice = createSlice({
             state.value.user = null
             state.value.token = null
         },
-        setCameraImage: (state, action ) => {
-           state.value = {
-                ...state.value,
-                imageCamera: action.payload
-           }
+        setCameraImage: (state, action) => {
+           state.value = { ...state.value, imageCamera: action.payload }
         }
     }
-})
+});
 
-export const {setUser, clearUser, setCameraImage} = authSlice.actions
-export default authSlice.reducer
+export const {setUser, clearUser, setCameraImage} = authSlice.actions;
+export default authSlice.reducer;

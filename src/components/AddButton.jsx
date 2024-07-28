@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text } from "react-native";
-import React from "react";
 import { colors } from "../global/colors";
+import React from "react";
+
 
 export default function AddButton ({ title , onPress = () => {} }) {
     return (

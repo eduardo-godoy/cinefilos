@@ -19,9 +19,9 @@ const handleAddCart = () => {
     <View>
       {product ? (
         <View style={ styles.mainContainer }>
-           <Text style= { styles.title }>{product.title}</Text>
+          <Text style= { styles.title }>{product.title}</Text>
           <Image source={{ uri: product.image }} style={ styles.image } resizeMode="cover"/>
-            <Text style={styles.price}>Genero: {product.category}</Text>
+          <Text style={styles.price}>Genero: {product.category}</Text>
           <View style={styles.textContainer}>
             <Text style={styles.description}>{product.description}</Text>
             <Text style={styles.price}>Precio:${product.price}</Text>
@@ -29,7 +29,7 @@ const handleAddCart = () => {
               <Text style={styles.cart}>Agregar al carrito</Text>
             </Pressable>
           </View>
-          </View>
+        </View>
       ) : null}
     </View>
   );

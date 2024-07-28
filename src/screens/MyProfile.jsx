@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { colors } from '../global/colors';
+import { StyleSheet, Text, View, Image } from "react-native";
+import { colors } from "../global/colors";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetProfileimageQuery } from '../services/shopServices';
-import { clearUser } from '../features/User/UserSlice';
-import { truncateSessionTable } from '../persistence';
-import AddButton from '../components/AddButton';
+import { useGetProfileimageQuery } from "../services/shopServices";
+import { clearUser } from "../features/User/UserSlice";
+import { truncateSessionTable } from "../persistence";
+import AddButton from "../components/AddButton";
 
 
 export default function MyProfile ({ navigation }) {
@@ -21,11 +21,10 @@ export default function MyProfile ({ navigation }) {
 
       const signOut = async () => {
         try {
-          const response = await truncateSessionTable()
-          console.log(response)
+          await truncateSessionTable();
           dispatch(clearUser())
         } catch (error) {
-          console.log({errorSignOutDB: error})
+          alert(error)
         }
       }
 
@@ -62,7 +61,7 @@ export default function MyProfile ({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     backgroundColor: colors.gray100
   },
   img: {
@@ -75,8 +74,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: colors.red,
     width: "80%",
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     paddingVertical: 7,
     borderRadius: 10
   },

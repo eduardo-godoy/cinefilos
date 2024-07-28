@@ -1,8 +1,8 @@
-import { StyleSheet, Text, Pressable } from 'react-native'
-import { colors } from '../global/colors';
-import { useDispatch } from 'react-redux';
-import { setCategorySelected } from '../features/Shop/ShopSlice';
-import Card from './Card';
+import { StyleSheet, Text, Pressable } from "react-native";
+import { colors } from "../global/colors";
+import { useDispatch } from "react-redux";
+import { setCategorySelected } from "../features/Shop/ShopSlice";
+import Card from "./Card";
 
 
 export default function CategoryItem ({ category, navigation }) {

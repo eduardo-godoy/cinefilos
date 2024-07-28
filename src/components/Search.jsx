@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, TextInput, View } from "react-native";
 import { colors } from "../global/colors";
 import { useState } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -48,6 +48,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.black,
     borderRadius: 10,
-  },
- 
+  }
 });

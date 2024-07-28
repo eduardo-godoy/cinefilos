@@ -8,13 +8,12 @@ import Navigator from "./src/navigation/Navigator";
 (async ()=> {
   try {
     if(Platform.OS !== 'web'){
-      const response = await initSQLiteDB()
+      await initSQLiteDB()
     }
-    //console.log(response)
   } catch (error) {
-    console.log({errorCreatingDB: error})
+    alert({errorCreatingDB: error})
   }
-})()
+})();
 
 export default function App() {
 

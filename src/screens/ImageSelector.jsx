@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, Image,Pressable } from 'react-native';
-import { useState } from 'react';
-import { colors } from '../global/colors'
-import { useDispatch, useSelector } from 'react-redux';
-import { setCameraImage } from '../features/User/UserSlice';
-import { useGetProfileimageQuery, usePostProfileImageMutation } from '../services/shopServices';
-import * as ImagePicker from 'expo-image-picker';
-import AddButton from '../components/AddButton';
+import { StyleSheet, Text, View, Image } from "react-native";
+import { useState } from "react";
+import { colors } from "../global/colors";
+import { useDispatch, useSelector } from "react-redux";
+import { setCameraImage } from "../features/User/UserSlice";
+import { useGetProfileimageQuery, usePostProfileImageMutation } from "../services/shopServices";
+import * as ImagePicker from "expo-image-picker";
+import AddButton from "../components/AddButton";
 
 export default function ImageSelector ({ navigation }) {
 
@@ -16,11 +16,10 @@ export default function ImageSelector ({ navigation }) {
   const { localId } = useSelector((state) => state.auth.value);
   const { data: imageFromBase} = useGetProfileimageQuery(localId);
   
-
-    const pickLibraryImage = async () => {
-      try {
-        setIsImageFromCamera(false)
-          const permissionGallery = await verifyGalleryPermissions();
+  const pickLibraryImage = async () => {
+    try {
+      setIsImageFromCamera(false)
+        const permissionGallery = await verifyGalleryPermissions();
           if (permissionGallery) {
             const result = await ImagePicker.launchImageLibraryAsync({
               base64: true,
@@ -35,22 +34,22 @@ export default function ImageSelector ({ navigation }) {
           }
         }
       } catch (error) {
-          console.log(error)
-      }
-    };
+        alert(error)
+    }
+  };
 
-    const verifyGalleryPermissions = async () => {
-      const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      return granted;
-    };
+  const verifyGalleryPermissions = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    return granted;
+  };
 
-    const verifyCameraPermisson = async () => {
-      const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-      if (!granted) {
-        return false;
-      }
+  const verifyCameraPermisson = async () => {
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+    if (!granted) {
+      return false;
+    }
       return true;
-    };
+  };
 
   const pickImage = async () => {
     const isCameraOk = await verifyCameraPermisson()
@@ -62,10 +61,10 @@ export default function ImageSelector ({ navigation }) {
         base64: true,
         quality: 0.2,
       });
-      if (!result.canceled) {
-        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
+    if (!result.canceled) {
+      setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
       }
-    }
+    } 
   };
 
   const atras = () => {
@@ -81,20 +80,7 @@ export default function ImageSelector ({ navigation }) {
       }
       navigation.goBack();
     } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const deleteImage = async () => {
-    try {
-      dispatch(setCameraImage(image));
-      triggerPostImage({ image, localId });
-      if (isImageFromCamera) {
-        ExpoLibrary.createAssetAsync(imageURI);
-      }
-      navigation.goBack();
-    } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -108,33 +94,25 @@ export default function ImageSelector ({ navigation }) {
             source={{ uri: image || imageFromBase?.image }}
           />
           <AddButton title="Tomar otra foto" onPress={pickImage} />
+          <AddButton title="Elegir otra foto" onPress={pickLibraryImage} />
 
-          <AddButton
-            title="Elegir otra foto"
-            onPress={pickLibraryImage}
-          />
-         
+          {imageFromBase && image ? <AddButton title="Confirmar" onPress={confirmImage} />  : null }
 
-        {imageFromBase && image ? <AddButton title="Confirmar" onPress={confirmImage} />  : null }
-        <AddButton title="Atras" onPress={atras} />
+          <AddButton title="Atras" onPress={atras} />
         </>
       ) : (
         <>
           <View style={styles.containerPhoto}>
-            <Text>Sin foto...</Text>
+            <Text>No hay foto...</Text>
           </View>
           <AddButton title="Tomar foto" onPress={pickImage} />
-          <AddButton
-            title="Elegir foto de la galeria"
-            onPress={pickLibraryImage}
-          />
+          <AddButton title="Elegir foto de la galeria" onPress={pickLibraryImage} />
           <AddButton title="Atras" onPress={atras} />
-        </>
-        
+        </> 
       )}
     </View>
   );
-}
+};
 
 
 const styles = StyleSheet.create({
@@ -164,6 +142,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     borderWidth: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: "roboto"
   }
-})
+});
