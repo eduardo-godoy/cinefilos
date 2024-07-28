@@ -14,7 +14,7 @@ export default function ImageSelector ({ navigation }) {
   const dispatch = useDispatch();
   const [triggerPostImage, result] = usePostProfileImageMutation();
   const { localId } = useSelector((state) => state.auth.value);
-  const { data: imageFromBase, error, isLoading } = useGetProfileimageQuery(localId);
+  const { data: imageFromBase} = useGetProfileimageQuery(localId);
   
 
     const pickLibraryImage = async () => {
@@ -115,7 +115,7 @@ export default function ImageSelector ({ navigation }) {
           />
          
 
-        {imageFromBase ? <AddButton title="Eliminar" onPress={deleteImage} /> :  <AddButton title="Confirmar" onPress={confirmImage} />  }
+        {imageFromBase && image ? <AddButton title="Confirmar" onPress={confirmImage} />  : null }
         <AddButton title="Atras" onPress={atras} />
         </>
       ) : (

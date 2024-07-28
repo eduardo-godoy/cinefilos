@@ -5,7 +5,7 @@ export const shopApi = createApi({
   
   reducerPath: "shopApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
-  tagTypes: ["profileImageGet",  'getOrders'],
+  tagTypes: ["profileImageGet", "getOrders"],
   endpoints: (builder) => ({
     getCategories: builder.query({
       query: () => `categories.json`,
@@ -32,6 +32,10 @@ export const shopApi = createApi({
         body: order,
       }),
     }),
+    getOrders: builder.query({
+      query: () => `orders.json`, 
+      providesTags: ['getOrders']
+    }),
     getOrdersByUser: builder.query({
       query: (user) => `orders.json?orderBy="user"&equalTo="${user}"`,
       transformResponse: (res) => {
@@ -53,11 +57,6 @@ export const shopApi = createApi({
       }),
       invalidatesTags: ["profileImageGet"],
     }),
-    getOrders: builder.query({
-      query: () => `orders.json`, 
-      method: "GET",
-      providesTags: ['getOrders']
-  }),
   }),
 });
 

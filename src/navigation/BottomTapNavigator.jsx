@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTapNavigator () {
 
-  const {imageCamera, localId} = useSelector((state) => state.auth.value);
+  const {image, localId} = useSelector((state) => state.auth.value);
   const {data: imageFromBase} = useGetProfileimageQuery(localId);
   const defaultImageRoute = "../../assets/user.png";
 
@@ -74,9 +74,9 @@ export default function BottomTapNavigator () {
           tabBarIcon: () => {
             return (
               <View>
-                {imageFromBase || imageCamera ? (
+                {imageFromBase || image ? (
                   <Image
-                    source={{ uri: imageFromBase?.image || imageCamera }}
+                    source={{ uri: imageFromBase?.image || image }}
                     style={styles.img}
                   />
                 ) : (

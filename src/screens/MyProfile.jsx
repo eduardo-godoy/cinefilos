@@ -10,7 +10,7 @@ import AddButton from '../components/AddButton';
 export default function MyProfile ({ navigation }) {
 
       const dispatch = useDispatch();
-      const {imageCamera, localId, user} = useSelector((state) => state.auth.value);
+      const {image, localId, user} = useSelector((state) => state.auth.value);
       const {data: imageFromBase} = useGetProfileimageQuery(localId);
 
       const launchCamera = async () => {
@@ -31,7 +31,7 @@ export default function MyProfile ({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {imageFromBase || imageCamera ? (
+      {imageFromBase || image ? (
         <Image
           source={{ uri: imageFromBase?.image || imageCamera }}
           style={styles.img}
@@ -48,7 +48,7 @@ export default function MyProfile ({ navigation }) {
       <AddButton
         onPress={launchCamera}
         title={
-          imageFromBase || imageCamera
+          imageFromBase || image
             ? "Cambiar foto de perfil"
             : "Agregar foto de perfil"
         }
